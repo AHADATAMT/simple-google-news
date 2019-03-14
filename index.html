@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="main.js"></script>
+  <script src="js/moment.js"></script>
+
 </head>
 
 <body>
@@ -79,7 +81,7 @@
       </div>
       <div class="page-container float-right">
         <div class="row">
-          <div class="col-12 text-right"><span id="numStory"></span></div>
+          <div class="col-12 text-right"><span id="boxSource"></span><span id="numStory"></span></div>
         </div>
         <div class="container-story row">
           <!-- Content here! -->
@@ -89,7 +91,7 @@
             <div class="block-27 list-page">
               <ul>
                 <li><a id="backBtn"  onclick="nextPage(-1)" href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
+                <li class="active"><span>Page</span></li>
                 <span id="showPages"></span>
                 <li><a id="nextBtn" href="#"  onclick="nextPage(1)">&gt;</a></li>
               </ul>
