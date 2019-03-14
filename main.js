@@ -1,9 +1,10 @@
+let source = [];
 let pageIn = 1;
-let source = []
-
-async function getNewsApi(pageIn) {
+let apikey = `apiKey=abbbd6dabc4b49d5b75ab7d5b962b5e0`;
+let category = '';
+async function getNewsApi() {
     // read our JSON
-    let response = await fetch(`https://newsapi.org/v2/top-headlines?q=game&country=us&category=technology&pageSize=20&page=${pageIn}&from=2019-02-15&apiKey=abbbd6dabc4b49d5b75ab7d5b962b5e0`);
+    let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us${category !== '' ? '&category=' + category : ''}&pageSize=20&page=${pageIn}&${apikey}`);
     let aiNews = await response.json();
     console.log(aiNews);
     return aiNews;
@@ -14,6 +15,7 @@ let updateStories = (aiNews) => {
     const numStoryContainer = document.getElementById('numStory');
 
     boxSource(aiNews.articles);
+
     numStoryContainer.innerHTML = numStory;
     let topStories_arr = aiNews.articles.filter((story, index) => {
         if (index <= 1)
@@ -37,28 +39,20 @@ getNewsApi(1).then(updateStories);
 
 let nextPage = (step) => {
     pageIn += step;
-    getNewsApi(pageIn).then(updateStories);
+    getNewsApi(pageIn, '').then(updateStories);
 }
 let pagesContainer = document.getElementById('showPages');
 
 let boxSource = (aiNews) => {
     let countSource_arr = aiNews
         .map(story => story.source.name)
-        .map((sourceName, index, self) => {
-            // let count = 1;
-            // for (let i = 1; i < self.length; i++)
-            //     if (sourceName == self[i]) {
-            //         count += 1;
-            //         self.splice(i, 1);
-            //     };
-            // return { 'sourceName': sourceName, 'number': count };
-        }).map(objSrc => {
-            console.log(objSrc);
-            let box = document.createElement("input");
-            box.setAttribute('type', 'checkbox');
-            box.cre
-            document.getElementById('boxSource').append
-        });
+        .map((sourceName, index, arr) => {
+            console.log(sourceName);
+            console.log(arr);
+            
+            // return { source: sourceName, count: '' }
+        })
+
 }
 
 
@@ -94,4 +88,8 @@ let topStoriesFn = (accumulator, story) => {
     </div>
 </div>`;
     return accumulator + storyStrHTML;
+}
+
+let changeCat = (cat) => {
+    getNewsApi(1, cat).then(updateStories);
 }

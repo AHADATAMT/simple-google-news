@@ -40,12 +40,12 @@
         <div class="row d-flex justify-content-end">
           <div class="col-md-12 px-5">
             <ul class="mb-5">
-              <li class="active"><a href="index.html"><span>Home</span></a></li>
-              <li><a href="fashion.html"><span>Fashion</span></a></li>
-              <li><a href="model.html"><span>Model</span></a></li>
-              <li><a href="travel.html"><span>Travel</span></a></li>
-              <li><a href="about.html"><span>About us</span></a></li>
-              <li><a href="contact.html"><span>Contact</span></a></li>
+              <li class="active"><a href="index.html" onclick="changeCat()"><span>Home</span></a></li>
+              <li><a href="#" onclick="changeCat('business')"><span>Business</span></a></li>
+              <li><a href="#" onclick="changeCat('entertainment')"><span>Entertainment</span></a></li>
+              <li><a href="#" onclick="changeCat('sports')"><span>Sports</span></a></li>
+              <li><a href="#" onclick="changeCat('technology')"><span>Technology</span></a></li>
+
             </ul>
           </div>
           <div class="col px-5 copyright">
@@ -90,10 +90,10 @@
           <div class="col text-center">
             <div class="block-27 list-page">
               <ul>
-                <li><a id="backBtn"  onclick="nextPage(-1)" href="#">&lt;</a></li>
+                <li><a id="backBtn" onclick="nextPage(-1)" href="#">&lt;</a></li>
                 <li class="active"><span>Page</span></li>
                 <span id="showPages"></span>
-                <li><a id="nextBtn" href="#"  onclick="nextPage(1)">&gt;</a></li>
+                <li><a id="nextBtn" href="#" onclick="nextPage(1)">&gt;</a></li>
               </ul>
             </div>
           </div>
