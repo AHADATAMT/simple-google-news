@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="main.css">
+
   <script src="main.js"></script>
   <script src="js/moment.js"></script>
 
@@ -81,7 +83,19 @@
       </div>
       <div class="page-container float-right">
         <div class="row">
-          <div class="col-12 text-right"><span id="boxSource"></span><span id="numStory"></span></div>
+          <div class="col-12 text-right mt-5">
+            <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes()">
+                <select>
+                  <option>Select Category</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes">
+
+              </div>
+            </div><span id="numStory"></span>
+          </div>
         </div>
         <div class="container-story row">
           <!-- Content here! -->
